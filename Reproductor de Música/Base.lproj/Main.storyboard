@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Reproductor_de_Mu_sica" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,87 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YrI-4s-hg5">
+                                <rect key="frame" x="180" y="45" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="50Q-bQ-Ti8"/>
+                                    <constraint firstAttribute="width" secondItem="YrI-4s-hg5" secondAttribute="height" multiplier="1:1" id="PjS-aI-3zL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPV-W2-MCY">
+                                <rect key="frame" x="281" y="366" width="39" height="30"/>
+                                <state key="normal" title="Tocar"/>
+                                <connections>
+                                    <action selector="iniciarCanción" destination="BYZ-38-t0r" eventType="touchUpInside" id="IrN-u2-l0F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npa-TA-ZSf">
+                                <rect key="frame" x="533" y="366" width="47" height="30"/>
+                                <state key="normal" title="Pausar"/>
+                                <connections>
+                                    <action selector="pausarReproducción" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qq9-u0-GxL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhR-mO-MIP">
+                                <rect key="frame" x="20" y="366" width="55" height="30"/>
+                                <state key="normal" title="Detener"/>
+                                <connections>
+                                    <action selector="deneterReproducción" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cq8-wh-Yzd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTn-1X-yTb">
+                                <rect key="frame" x="278" y="315" width="44" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EaJ-EX-Z4s">
+                                <rect key="frame" x="253" y="426" width="94" height="29"/>
+                                <connections>
+                                    <action selector="cambioDeVolumen:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZJX-YS-tLC"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UTn-1X-yTb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Ag-LE-RSn"/>
+                            <constraint firstItem="IPV-W2-MCY" firstAttribute="baseline" secondItem="npa-TA-ZSf" secondAttribute="baseline" id="7Jd-07-HGl"/>
+                            <constraint firstItem="IPV-W2-MCY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8X9-a3-Qcs"/>
+                            <constraint firstItem="JhR-mO-MIP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="AdX-EU-2qx"/>
+                            <constraint firstAttribute="trailing" secondItem="npa-TA-ZSf" secondAttribute="trailing" constant="20" id="E3a-71-e18"/>
+                            <constraint firstItem="EaJ-EX-Z4s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FIJ-pG-SRR"/>
+                            <constraint firstItem="IPV-W2-MCY" firstAttribute="top" secondItem="UTn-1X-yTb" secondAttribute="bottom" constant="30" id="LoU-tD-3Lv"/>
+                            <constraint firstItem="IPV-W2-MCY" firstAttribute="baseline" secondItem="JhR-mO-MIP" secondAttribute="baseline" id="Mrh-8k-GIH"/>
+                            <constraint firstItem="YrI-4s-hg5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="OY7-F5-QjD"/>
+                            <constraint firstItem="UTn-1X-yTb" firstAttribute="top" secondItem="YrI-4s-hg5" secondAttribute="bottom" constant="30" id="pcO-bo-mkS"/>
+                            <constraint firstItem="YrI-4s-hg5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wM2-my-Ux8"/>
+                            <constraint firstItem="EaJ-EX-Z4s" firstAttribute="top" secondItem="IPV-W2-MCY" secondAttribute="bottom" constant="30" id="ydW-tb-kMg"/>
+                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="search" id="60X-uN-9qF">
+                            <connections>
+                                <action selector="buscarCanción:" destination="BYZ-38-t0r" id="gdZ-64-Yke"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="kPK-l3-MCn"/>
+                        <barButtonItem title="Aleatorio" id="owy-mc-bQ1">
+                            <connections>
+                                <action selector="canciónAleatoria:" destination="BYZ-38-t0r" id="QnW-GC-44l"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="controlVolumen" destination="EaJ-EX-Z4s" id="Qmg-Iw-HA0"/>
+                        <outlet property="portada" destination="YrI-4s-hg5" id="ATj-9D-CNq"/>
+                        <outlet property="título" destination="UTn-1X-yTb" id="Euz-pW-dIm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="388"/>
         </scene>
     </scenes>
 </document>
