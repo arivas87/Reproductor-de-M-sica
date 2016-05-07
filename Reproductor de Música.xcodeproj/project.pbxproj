@@ -13,6 +13,7 @@
 		AC105FA51CDDCC2C00584CE5 /* Reproductor_de_Mu_sica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC105FA31CDDCC2C00584CE5 /* Reproductor_de_Mu_sica.xcdatamodeld */; };
 		AC105FA71CDDCC2C00584CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC105FA61CDDCC2C00584CE5 /* Assets.xcassets */; };
 		AC105FAA1CDDCC2C00584CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC105FA81CDDCC2C00584CE5 /* LaunchScreen.storyboard */; };
+		ACF8BD861CDE69410073D6DE /* 137 horas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACF8BD851CDE69410073D6DE /* 137 horas.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AC105FA61CDDCC2C00584CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC105FA91CDDCC2C00584CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC105FAB1CDDCC2C00584CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACF8BD851CDE69410073D6DE /* 137 horas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "137 horas.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		AC105F9B1CDDCC2C00584CE5 /* Reproductor de Música */ = {
 			isa = PBXGroup;
 			children = (
+				ACF8BD851CDE69410073D6DE /* 137 horas.mp3 */,
 				AC105F9C1CDDCC2C00584CE5 /* AppDelegate.swift */,
 				AC105F9E1CDDCC2C00584CE5 /* ViewController.swift */,
 				AC105FA01CDDCC2C00584CE5 /* Main.storyboard */,
@@ -128,6 +131,7 @@
 				AC105FAA1CDDCC2C00584CE5 /* LaunchScreen.storyboard in Resources */,
 				AC105FA71CDDCC2C00584CE5 /* Assets.xcassets in Resources */,
 				AC105FA21CDDCC2C00584CE5 /* Main.storyboard in Resources */,
+				ACF8BD861CDE69410073D6DE /* 137 horas.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +296,7 @@
 				AC105FB01CDDCC2C00584CE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
