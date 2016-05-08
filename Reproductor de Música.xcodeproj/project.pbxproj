@@ -13,7 +13,12 @@
 		AC105FA51CDDCC2C00584CE5 /* Reproductor_de_Mu_sica.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC105FA31CDDCC2C00584CE5 /* Reproductor_de_Mu_sica.xcdatamodeld */; };
 		AC105FA71CDDCC2C00584CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC105FA61CDDCC2C00584CE5 /* Assets.xcassets */; };
 		AC105FAA1CDDCC2C00584CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC105FA81CDDCC2C00584CE5 /* LaunchScreen.storyboard */; };
-		ACF8BD861CDE69410073D6DE /* 137 horas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ACF8BD851CDE69410073D6DE /* 137 horas.mp3 */; };
+		AC70C1911CDF48BF00BB6C48 /* hey.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC70C1871CDF48BF00BB6C48 /* hey.m4a */; };
+		AC70C1921CDF48BF00BB6C48 /* tortugas.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC70C1881CDF48BF00BB6C48 /* tortugas.m4a */; };
+		AC70C1931CDF48BF00BB6C48 /* horas.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC70C1891CDF48BF00BB6C48 /* horas.m4a */; };
+		AC70C1951CDF48BF00BB6C48 /* chocones.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC70C18B1CDF48BF00BB6C48 /* chocones.m4a */; };
+		AC70C19C1CDF4A5700BB6C48 /* Canción.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC70C19B1CDF4A5700BB6C48 /* Canción.swift */; };
+		AC7E4F351CDF5085001D39CC /* micoco.m4a in Resources */ = {isa = PBXBuildFile; fileRef = AC7E4F341CDF5085001D39CC /* micoco.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +30,12 @@
 		AC105FA61CDDCC2C00584CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC105FA91CDDCC2C00584CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC105FAB1CDDCC2C00584CE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACF8BD851CDE69410073D6DE /* 137 horas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "137 horas.mp3"; sourceTree = "<group>"; };
+		AC70C1871CDF48BF00BB6C48 /* hey.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hey.m4a; sourceTree = "<group>"; };
+		AC70C1881CDF48BF00BB6C48 /* tortugas.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = tortugas.m4a; sourceTree = "<group>"; };
+		AC70C1891CDF48BF00BB6C48 /* horas.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = horas.m4a; sourceTree = "<group>"; };
+		AC70C18B1CDF48BF00BB6C48 /* chocones.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = chocones.m4a; sourceTree = "<group>"; };
+		AC70C19B1CDF4A5700BB6C48 /* Canción.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Canción.swift"; sourceTree = "<group>"; };
+		AC7E4F341CDF5085001D39CC /* micoco.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = micoco.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +68,11 @@
 		AC105F9B1CDDCC2C00584CE5 /* Reproductor de Música */ = {
 			isa = PBXGroup;
 			children = (
-				ACF8BD851CDE69410073D6DE /* 137 horas.mp3 */,
+				AC7E4F341CDF5085001D39CC /* micoco.m4a */,
+				AC70C1871CDF48BF00BB6C48 /* hey.m4a */,
+				AC70C1881CDF48BF00BB6C48 /* tortugas.m4a */,
+				AC70C1891CDF48BF00BB6C48 /* horas.m4a */,
+				AC70C18B1CDF48BF00BB6C48 /* chocones.m4a */,
 				AC105F9C1CDDCC2C00584CE5 /* AppDelegate.swift */,
 				AC105F9E1CDDCC2C00584CE5 /* ViewController.swift */,
 				AC105FA01CDDCC2C00584CE5 /* Main.storyboard */,
@@ -66,6 +80,7 @@
 				AC105FA81CDDCC2C00584CE5 /* LaunchScreen.storyboard */,
 				AC105FAB1CDDCC2C00584CE5 /* Info.plist */,
 				AC105FA31CDDCC2C00584CE5 /* Reproductor_de_Mu_sica.xcdatamodeld */,
+				AC70C19B1CDF4A5700BB6C48 /* Canción.swift */,
 			);
 			path = "Reproductor de Música";
 			sourceTree = "<group>";
@@ -129,9 +144,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC105FAA1CDDCC2C00584CE5 /* LaunchScreen.storyboard in Resources */,
+				AC70C1911CDF48BF00BB6C48 /* hey.m4a in Resources */,
 				AC105FA71CDDCC2C00584CE5 /* Assets.xcassets in Resources */,
+				AC70C1921CDF48BF00BB6C48 /* tortugas.m4a in Resources */,
+				AC7E4F351CDF5085001D39CC /* micoco.m4a in Resources */,
+				AC70C1931CDF48BF00BB6C48 /* horas.m4a in Resources */,
+				AC70C1951CDF48BF00BB6C48 /* chocones.m4a in Resources */,
 				AC105FA21CDDCC2C00584CE5 /* Main.storyboard in Resources */,
-				ACF8BD861CDE69410073D6DE /* 137 horas.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC105F9F1CDDCC2C00584CE5 /* ViewController.swift in Sources */,
+				AC70C19C1CDF4A5700BB6C48 /* Canción.swift in Sources */,
 				AC105F9D1CDDCC2C00584CE5 /* AppDelegate.swift in Sources */,
 				AC105FA51CDDCC2C00584CE5 /* Reproductor_de_Mu_sica.xcdatamodeld in Sources */,
 			);

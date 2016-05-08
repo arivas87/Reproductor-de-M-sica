@@ -9,7 +9,10 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+let BOLD = UIFont.boldSystemFontOfSize(15)
+let REGULAR = UIFont.systemFontOfSize(15)
+
+class ViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var controlVolumen: UIStepper!
     @IBOutlet weak var portada: UIImageView!
@@ -22,23 +25,17 @@ class ViewController: UIViewController {
     
     var reproductor: AVAudioPlayer!
     
+    var canciones = [Canción]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let path = NSBundle.mainBundle().pathForResource("137 horas.mp3", ofType:nil)!
-        let url = NSURL(fileURLWithPath: path)
+        insertaCanciones()
         
-        do {
-            let sound = try AVAudioPlayer(contentsOfURL: url)
-            reproductor = sound
-            
-            controlVolumen.value = Double(reproductor.volume)
-            sliderVolumen.value = reproductor.volume
-        } catch {
-            let nserror = error as NSError
-            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
+        let random = Int(arc4random_uniform(5))
+        cargarCanción(canciones[random])
+        reproductor.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,10 +43,55 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func insertaCanciones() {
+        canciones.append(Canción(título: "137 horas", portada: "despistaos", url: "horas.m4a"))
+        canciones.append(Canción(título: "Hey boy, hey girl", portada: "chermica", url: "hey.m4a"))
+        canciones.append(Canción(título: "Mi coco", portada: "piratas", url: "micoco.m4a"))
+        canciones.append(Canción(título: "Los coches chocones", portada: "desgraciaus", url: "chocones.m4a"))
+        canciones.append(Canción(título: "El secreto de las tortugas", portada: "maldita", url: "tortugas.m4a"))
+    }
+    
+    func cargarCanción(canción: Canción) {
+        portada.image = canción.portada
+        título.text = canción.título
+        
+        do {
+            reproductor = try AVAudioPlayer(contentsOfURL: canción.url)
+            
+            controlVolumen.value = Double(reproductor.volume)
+            sliderVolumen.value = reproductor.volume
+        } catch {
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
+        botónTocar.titleLabel?.font = REGULAR
+        botónPausar.titleLabel?.font = REGULAR
+    }
+    
     @IBAction func canciónAleatoria() {
+        let random = Int(arc4random_uniform(5))
+        if canciones[random].url != reproductor.url {
+            cargarCanción(canciones[random])
+            iniciarCanción()
+        } else {
+            canciónAleatoria()
+        }
     }
     
     @IBAction func buscarCanción() {
+        let alert = UIAlertController(title: "Seleccione canción", message: nil, preferredStyle: .ActionSheet)
+        
+        for canción in canciones {
+            alert.addAction(UIAlertAction(title: canción.título, style: .Default, handler: { Void in
+                self.cargarCanción(canción)
+                self.iniciarCanción()
+            }))
+        }
+        
+        alert.addAction(UIAlertAction(title: "Cerrar", style: .Destructive, handler: nil))
+        
+        presentViewController(alert, animated: true, completion: nil)
     }
 
     @IBAction func deneterReproducción() {
@@ -59,7 +101,7 @@ class ViewController: UIViewController {
 
     @IBAction func iniciarCanción() {
         reproductor.play()
-        
+        botónTocar.titleLabel?.font = BOLD
     }
     
     @IBAction func pausarReproducción() {
@@ -71,26 +113,33 @@ class ViewController: UIViewController {
         sliderVolumen.value = reproductor.volume
     }
     
+    @IBAction func cambioDeVolumenSlider(sender: UISlider) {
+        reproductor.volume = sender.value
+        controlVolumen.value = Double(reproductor.volume)
+    }
+    
     @IBAction func destacarBotónPulsado(sender: UIButton) {
-        let bold = UIFont.boldSystemFontOfSize(15)
-        let regular = UIFont.systemFontOfSize(15)
-        
         switch sender {
         case botónDetener:
-            botónTocar.titleLabel?.font = regular
-            botónPausar.titleLabel?.font = regular
+            botónTocar.titleLabel?.font = REGULAR
+            botónPausar.titleLabel?.font = REGULAR
             break
         case botónTocar:
-            botónTocar.titleLabel?.font = bold
-            botónPausar.titleLabel?.font = regular
+            botónTocar.titleLabel?.font = BOLD
+            botónPausar.titleLabel?.font = REGULAR
             break
         case botónPausar:
-            botónTocar.titleLabel?.font = regular
-            botónPausar.titleLabel?.font = bold
+            botónTocar.titleLabel?.font = REGULAR
+            botónPausar.titleLabel?.font = BOLD
             break
         default:
             break
         }
+    }
+    
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        botónTocar.titleLabel?.font = REGULAR
+        botónPausar.titleLabel?.font = REGULAR
     }
     
 }

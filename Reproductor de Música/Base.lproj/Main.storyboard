@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YrI-4s-hg5">
-                                <rect key="frame" x="180" y="45" width="240" height="240"/>
+                                <rect key="frame" x="200" y="45" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="50Q-bQ-Ti8"/>
+                                    <constraint firstAttribute="width" constant="200" id="50Q-bQ-Ti8"/>
                                     <constraint firstAttribute="width" secondItem="YrI-4s-hg5" secondAttribute="height" multiplier="1:1" id="PjS-aI-3zL"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPV-W2-MCY">
-                                <rect key="frame" x="281" y="366" width="39" height="30"/>
+                                <rect key="frame" x="281" y="326" width="39" height="30"/>
                                 <state key="normal" title="Tocar"/>
                                 <state key="highlighted" title="Tocar"/>
                                 <connections>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npa-TA-ZSf">
-                                <rect key="frame" x="533" y="366" width="47" height="30"/>
+                                <rect key="frame" x="533" y="326" width="47" height="30"/>
                                 <state key="normal" title="Pausar"/>
                                 <connections>
                                     <action selector="destacarBotónPulsado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QNa-ne-ehV"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhR-mO-MIP">
-                                <rect key="frame" x="20" y="366" width="55" height="30"/>
+                                <rect key="frame" x="20" y="326" width="55" height="30"/>
                                 <state key="normal" title="Detener"/>
                                 <connections>
                                     <action selector="deneterReproducción" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cq8-wh-Yzd"/>
@@ -52,13 +52,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Título" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTn-1X-yTb">
-                                <rect key="frame" x="278" y="315" width="44" height="21"/>
+                                <rect key="frame" x="278" y="275" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EaJ-EX-Z4s">
-                                <rect key="frame" x="253" y="426" width="94" height="29"/>
+                                <rect key="frame" x="253" y="386" width="94" height="29"/>
                                 <connections>
                                     <action selector="cambioDeVolumen:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZJX-YS-tLC"/>
                                 </connections>
@@ -78,7 +78,10 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="7B5-CL-5gq">
-                                <rect key="frame" x="48" y="463" width="504" height="31"/>
+                                <rect key="frame" x="48" y="423" width="504" height="31"/>
+                                <connections>
+                                    <action selector="cambioDeVolumenSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="S8L-2V-lyf"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
